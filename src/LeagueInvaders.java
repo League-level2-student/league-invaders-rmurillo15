@@ -7,11 +7,13 @@ public class LeagueInvaders {
 	public static final int HEIGHT = 800;
 	GamePanel gamepanel;
 	
+	
 	LeagueInvaders(){
 		
 	jframe = new JFrame();
 	gamepanel = new GamePanel();
-		
+	jframe.addKeyListener(gamepanel);
+	
 	}
 	
 	public static void main(String[] args) {
