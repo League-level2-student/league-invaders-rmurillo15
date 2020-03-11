@@ -26,9 +26,10 @@ public class LeagueInvaders {
 	void Setup(){
 	
 	jframe.add(gamepanel);
-	jframe.setSize(WIDTH, HEIGHT);
+	//jframe.setSize(WIDTH, HEIGHT);
 	jframe.setVisible(true);
 	jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	jframe.pack();
 	
 	}
 }

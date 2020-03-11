@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -26,7 +27,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     	
     }
     void updateGameState() { 
-    	
+    	rocketship.update();
     }
     void updateEndState()  { 
     	
@@ -61,7 +62,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     	
     }
 	GamePanel(){
-		
+		setPreferredSize(new Dimension(LeagueInvaders.WIDTH, LeagueInvaders.HEIGHT));
 		 titleFont = new Font("Arial", Font.PLAIN, 48);
 		 gameoverFont = new Font("Arial", Font.PLAIN, 50);
 		 enterFont = new Font("Arial", Font.PLAIN, 30);
@@ -119,24 +120,36 @@ public void keyPressed(KeyEvent e) {
 	
 	if (e.getKeyCode()==KeyEvent.VK_UP) {
 	    System.out.println("UP");
-    	
+	    rocketship.up = true;
 	}if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
 	    System.out.println("RIGHT");
-    	
+	    rocketship.right = true; 
 	}if (e.getKeyCode()==KeyEvent.VK_DOWN) {
 	    System.out.println("DOWN");
-    	
+	    rocketship.down = true; 
 	}if (e.getKeyCode()==KeyEvent.VK_LEFT) {
 	    System.out.println("LEFT");
-
+	    rocketship.left = true; 
 	}
 	
 }
 @Override
 public void keyReleased(KeyEvent e) {
 	// TODO Auto-generated method stub
-	
+	if (e.getKeyCode()==KeyEvent.VK_UP) {
+	    System.out.println("UP");
+	    rocketship.up = false;
+	}
+	if (e.getKeyCode()==KeyEvent.VK_RIGHT) {
+	    System.out.println("RIGHT");
+	    rocketship.right = false;
+	}
+	if (e.getKeyCode()==KeyEvent.VK_DOWN) {
+	    System.out.println("DOWN");
+	    rocketship.down = false;
+	}
+	if (e.getKeyCode()==KeyEvent.VK_LEFT) {
+	    System.out.println("LEFT");
+	    rocketship.left = false; 	
 }
-
-		
-}
+}}
